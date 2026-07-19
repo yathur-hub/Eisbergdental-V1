@@ -118,12 +118,24 @@ export default function QualitaetSicherheit({ onNavigate }: QualitaetSicherheitP
 
       {/* 3. Origin Certificate & Manufacturing */}
       <section className="py-16 md:py-24 bg-[var(--color-bg-surface)] border-b border-[var(--color-border-subtle)]">
-        <div className="container max-w-3xl space-y-4">
+        <div className="container max-w-3xl space-y-5">
           <h3 className="font-serif text-h3 font-medium text-[var(--color-text-primary)]">
             Herkunftsgarantie & Schweizer Wertschöpfung
           </h3>
           <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
-            Die zahntechnische Fertigung von Medizinprodukten unterliegt in der Schweiz der Medizinprodukteverordnung (MepV). Als lokales Handwerksatelier fertigen wir jede einzelne zahntechnische Krone, Brücke und Implantatkonstruktion ausschliesslich an der Forchstrasse 261 in Zürich. Wir verzichten konsequent auf jegliches Outsourcing in Drittstaaten.
+            Eisberg Dental fertigt am eigenen Standort an der Forchstrasse 261 in Zürich. Die Konstruktion und Fertigung Ihrer Arbeit erfolgt direkt im Labor vor Ort, unter der persönlichen Verantwortung von Thomas Barandun – nicht über einen externen Zwischenschritt oder eine anonyme Weiterleitung.
+          </p>
+          <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            <strong>Warum das für Ihre Praxis relevant ist:</strong> Eine Fertigung am Schweizer Standort bedeutet kurze Wege für Rückfragen, für Korrekturen und – falls gewünscht – für eine gemeinsame Abstimmung direkt im Labor, statt eines Versands ins Ausland und zurück mit entsprechend längeren Wartezeiten bei Unklarheiten.
+          </p>
+          <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            <strong>Zur rechtlichen Einordnung:</strong> Die Bezeichnung „Schweizer Herkunft" bzw. „Swiss Made" ist in der Schweiz gesetzlich geregelt (Swissness-Gesetzgebung) und setzt unter anderem einen bestimmten Mindestanteil an inländischer Wertschöpfung voraus.
+          </p>
+          <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed italic opacity-85">
+            (Ob Eisberg Dental die dafür massgeblichen gesetzlichen Kriterien im Detail erfüllt und eine entsprechende Kennzeichnung — z. B. Schweizerkreuz oder „Swiss Made"-Bezeichnung — führen darf, ist aktuell nicht abschliessend bestätigt und wird vor einer solchen Kommunikation geprüft. Unabhängig davon steht fest: Standort und tatsächliche Fertigung befinden sich in Zürich.)
+          </p>
+          <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            Bei Rückfragen zur Herkunft oder zum Produktionsablauf einzelner Arbeitsschritte sprechen Sie uns gerne direkt an.
           </p>
         </div>
       </section>

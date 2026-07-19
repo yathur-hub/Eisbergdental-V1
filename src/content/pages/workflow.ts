@@ -17,6 +17,7 @@ export interface WorkflowContent {
   datenuebermittlung: {
     heading: string;
     text: string;
+    description?: string;
     ctaText: string;
   };
   datenschutz: {
@@ -100,6 +101,7 @@ export const workflowContent: WorkflowContent = {
   datenuebermittlung: {
     heading: "Digitale Datenübermittlung",
     text: "Welche digitalen Schnittstellen für Ihre Praxis passen, klären wir direkt im Gespräch.",
+    description: "Digital erfasste Fälle lassen sich in der Regel schneller und mit weniger Fehlerquellen bearbeiten als klassische Abformungen: Der Postweg entfällt, Verzerrungen durch Transport oder Materialschrumpfung sind ausgeschlossen, und Unklarheiten in den Daten lassen sich direkt mit Ihnen besprechen, bevor die Fertigung beginnt. Ob Ihr aktuelles Intraoralscanner- oder Softwaresystem direkt kompatibel ist, klären wir gemeinsam im persönlichen Gespräch – so stellen wir sicher, dass die Datenübermittlung für Ihre Praxis von Anfang an reibungslos funktioniert, unabhängig davon, mit welchem System Sie aktuell arbeiten.",
     ctaText: "Workflow-Leitfaden anfordern"
   },
   datenschutz: {
@@ -132,12 +134,36 @@ export const workflowContent: WorkflowContent = {
   },
   faqs: [
     {
-      question: "Wie übermittle ich Patientendaten sicher?",
-      answer: "Die Übermittlung von Patientendaten erfolgt über gesicherte, DSG-konforme Übertragungswege. Kontaktieren Sie uns für die Einrichtung."
+      question: "Muss ich auf einen bestimmten Scanner umsteigen, um mit Eisberg Dental zusammenzuarbeiten?",
+      answer: "Nein. Wir arbeiten sowohl mit digital erfassten als auch mit klassischen, analogen Abformungen. Welcher Weg für Ihre Praxis am praktikabelsten ist, klären wir gemeinsam – ein Umstieg ist keine Voraussetzung für die Zusammenarbeit."
     },
     {
-      question: "Was passiert, wenn die übermittelten Daten unvollständig sind?",
-      answer: "Wir kontaktieren Sie direkt, bevor mit der Fertigung begonnen wird."
+      question: "In welchen Dateiformaten kann ich meine Scandaten einreichen?",
+      answer: "(hängt von der finalen Schnittstellenklärung ab) Bis dahin klären wir dies direkt mit Ihnen, damit Ihre Daten korrekt und vollständig ankommen."
+    },
+    {
+      question: "Wie übermittle ich Patientendaten sicher?",
+      answer: "Wird nach Einrichtung eines geprüften Übertragungswegs ergänzt – siehe auch „Datenschutz bei der Übermittlung\" weiter oben auf dieser Seite."
+    },
+    {
+      question: "Was passiert, wenn die übermittelten Daten unvollständig oder unscharf sind?",
+      answer: "Wir prüfen jede eingereichte Datei vor Beginn der Fertigung. Sollte ein Bereich unklar oder unvollständig sein, melden wir uns direkt bei Ihnen, statt mit unsicheren Daten weiterzuarbeiten."
+    },
+    {
+      question: "Kann ich für denselben Fall digitale und analoge Unterlagen kombinieren?",
+      answer: "Ja – zum Beispiel einen digitalen Scan in Kombination mit einem konventionellen Bissregistrat. Sprechen Sie uns bei Bedarf direkt an, wir stimmen das passende Vorgehen für Ihren Fall ab."
+    },
+    {
+      question: "Wer ist mein Ansprechpartner bei Rückfragen zu einem digital eingereichten Fall?",
+      answer: "Thomas Barandun persönlich – er nimmt eingehende Fälle entgegen, prüft sie und ist direkter Ansprechpartner bei jeder Rückfrage."
+    },
+    {
+      question: "Wie erfahre ich den Status meines eingereichten Falls?",
+      answer: "Aktuell erfolgt die Abstimmung direkt und persönlich – telefonisch oder per E-Mail. Sprechen Sie uns jederzeit an, wenn Sie den Stand eines laufenden Falls erfragen möchten."
+    },
+    {
+      question: "Wirkt sich der Übermittlungsweg (digital oder analog) auf die Durchlaufzeit aus?",
+      answer: "Die Durchlaufzeit richtet sich vor allem nach der Komplexität des Falls, nicht primär nach dem Übermittlungsweg. Konkrete Termine besprechen wir bei der Auftragsklärung."
     }
   ],
   abschlussCta: {

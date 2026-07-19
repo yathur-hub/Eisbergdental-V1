@@ -68,6 +68,11 @@ export default function DigitalerWorkflow({ onNavigate }: DigitalerWorkflowProps
               <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
                 {workflowContent.datenuebermittlung.text}
               </p>
+              {workflowContent.datenuebermittlung.description && (
+                <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed pt-2">
+                  {workflowContent.datenuebermittlung.description}
+                </p>
+              )}
             </div>
 
             <div className="lg:col-span-7 space-y-6">

@@ -222,8 +222,8 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                       <button
                         key={item.id}
                         onClick={() => handleItemClick(item.id)}
-                        className={`text-left font-serif text-h2 md:text-h2 lg:text-h1 font-medium tracking-tight hover:text-[#CE8946] focus:text-[#CE8946] focus-visible:outline-none transition-colors duration-200 cursor-pointer block group ${
-                          isActive ? 'text-[#CE8946]' : 'text-[var(--color-text-primary-ondark)]'
+                        className={`text-left font-serif text-h2 md:text-h2 lg:text-h1 font-medium tracking-tight hover:!text-[#CE8946] focus:!text-[#CE8946] focus-visible:outline-none transition-colors duration-200 cursor-pointer block group ${
+                          isActive ? '!text-[#CE8946]' : '!text-[var(--color-text-primary-ondark)]'
                         }`}
                       >
                         <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">
@@ -263,8 +263,8 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                         }`}
                       >
                         <h4 className={`font-display text-sm font-semibold uppercase tracking-wide transition-colors duration-200 ${
-                          isActive ? 'text-[#CE8946]' : 'text-[var(--color-text-primary-ondark)]'
-                        } group-hover:text-[#CE8946]`}>
+                          isActive ? '!text-[#CE8946]' : '!text-[var(--color-text-primary-ondark)]'
+                        } group-hover:!text-[#CE8946]`}>
                           {item.label}
                         </h4>
                         <p className="text-xs text-[var(--color-text-secondary-ondark)] leading-relaxed font-sans max-w-sm transition-colors duration-200 group-hover:text-[var(--color-text-primary-ondark)]">
@@ -370,8 +370,8 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                               className="w-full text-left block space-y-1 border-l border-[var(--color-brand-500)] pl-3 group"
                             >
                               <h5 className={`font-display text-xs font-bold uppercase transition-colors duration-200 ${
-                                isActive ? 'text-[#CE8946]' : 'text-[var(--color-text-primary-ondark)]'
-                              } group-hover:text-[#CE8946]`}>
+                                isActive ? '!text-[#CE8946]' : '!text-[var(--color-text-primary-ondark)]'
+                              } group-hover:!text-[#CE8946]`}>
                                 {item.label}
                               </h5>
                               <p className="text-[11px] text-[var(--color-text-secondary-ondark)]/80 leading-relaxed font-sans">
@@ -393,10 +393,10 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                       <button
                         key={item.id}
                         onClick={() => handleItemClick(item.id)}
-                        className={`w-full min-h-[44px] flex items-center text-left px-4 py-2 font-display text-sm font-medium tracking-wide border border-transparent rounded-[var(--radius-xs)] hover:bg-[var(--color-brand-700)]/30 hover:text-[#CE8946] transition-colors duration-200 ${
+                        className={`w-full min-h-[44px] flex items-center text-left px-4 py-2 font-display text-sm font-medium tracking-wide border border-transparent rounded-[var(--radius-xs)] hover:bg-[var(--color-brand-700)]/30 hover:!text-[#CE8946] transition-colors duration-200 ${
                           isActive 
-                            ? 'bg-[var(--color-brand-700)] text-[#CE8946] border-l-2 border-l-[#CE8946]' 
-                            : 'text-[var(--color-text-primary-ondark)]'
+                            ? 'bg-[var(--color-brand-700)] !text-[#CE8946] border-l-2 border-l-[#CE8946]' 
+                            : '!text-[var(--color-text-primary-ondark)]'
                         }`}
                       >
                         {item.label}
@@ -448,8 +448,8 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                     <button
                       key={item.id}
                       onClick={() => handleItemClick(item.id)}
-                      className={`hover:text-[#CE8946] focus:text-[#CE8946] cursor-pointer text-[11px] transition-colors duration-200 ${
-                        isActive ? 'text-[#CE8946] font-semibold' : 'hover:text-[#CE8946]'
+                      className={`hover:!text-[#CE8946] focus:!text-[#CE8946] cursor-pointer text-[11px] transition-colors duration-200 ${
+                        isActive ? '!text-[#CE8946] font-semibold' : 'hover:!text-[#CE8946]'
                       }`}
                     >
                       {item.label}

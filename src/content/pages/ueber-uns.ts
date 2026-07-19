@@ -33,6 +33,7 @@ export interface UeberUnsContent {
   verantwortung: {
     heading: string;
     text: string;
+    paragraphs?: string[];
   };
   standort: {
     heading: string;
@@ -97,7 +98,11 @@ export const ueberUnsContent: UeberUnsContent = {
   },
   verantwortung: {
     heading: "Persönliche Verantwortung",
-    text: "As Einzelunternehmen trägt Thomas Barandun die fachliche Verantwortung für jede Arbeit, die das Labor verlässt, persönlich – von der Planung bis zur Endkontrolle."
+    text: "Thomas Barandun übernimmt die fachliche Verantwortung für jeden Fall persönlich – unabhängig davon, wie komplex die Ausgangslage ist oder wie viele Rückfragen sich während der Fertigung ergeben.",
+    paragraphs: [
+      "Jede Arbeit, die das Labor verlässt, durchläuft von der Planung bis zur Endkontrolle dieselben Hände: Thomas Barandun übernimmt die fachliche Verantwortung für jeden Fall persönlich – unabhängig davon, wie komplex die Ausgangslage ist oder wie viele Rückfragen sich während der Fertigung ergeben.",
+      "Für Sie als Praxis bedeutet das: keine Übergabe zwischen wechselnden Zuständigkeiten und keine Verwässerung der Verantwortung über mehrere Stationen hinweg. Wenn Sie eine Frage zu einem laufenden Fall haben, sprechen Sie direkt mit der Person, die ihn tatsächlich bearbeitet – nicht mit einer vorgeschalteten Kontaktstelle."
+    ]
   },
   standort: {
     heading: "Laborstandort",

@@ -32,8 +32,10 @@ export default function WissenFaq({ onNavigate }: WissenFaqProps) {
     { id: 'all', label: 'Alle Themen' },
     { id: 'zusammenarbeit', label: 'Zusammenarbeit' },
     { id: 'workflow', label: 'Digitaler Workflow' },
-    { id: 'materialien', label: 'Materialien' },
-    { id: 'qualitaet', label: 'Qualität & Abläufe' },
+    { id: 'materialien', label: 'Leistungen & Materialien' },
+    { id: 'qualitaet', label: 'Qualität & Sicherheit' },
+    { id: 'referenzen', label: 'Referenzen' },
+    { id: 'kontakt', label: 'Kontakt' },
   ];
 
   // Flatten the clusters into flat records with their cluster id as category

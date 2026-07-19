@@ -56,7 +56,7 @@ export default function UeberUns({ onNavigate }: UeberUnsProps) {
                   <img
                     src="https://raw.githubusercontent.com/yathur-hub/eisbergdental-assets/refs/heads/main/thomas%20barandun.avif"
                     alt="Thomas Barandun - Zahntechniker-Meister und Geschäftsführer"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-out scale-100 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-all duration-500 ease-out scale-100 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
                   {/* Subtle decorative grid/overlay element */}
@@ -155,13 +155,21 @@ export default function UeberUns({ onNavigate }: UeberUnsProps) {
 
       {/* 4. Single Ownership / Personal Responsibility */}
       <section className="py-16 md:py-24 border-b border-[var(--color-border-subtle)]">
-        <div className="container max-w-3xl space-y-4">
-          <h3 className="font-serif text-h3 font-medium text-[var(--color-text-primary)]">
+        <div className="container max-w-3xl space-y-5">
+          <h3 className="font-serif text-h3 font-medium text-[var(--color-text-primary)] mb-2">
             {ueberUnsContent.verantwortung.heading}
           </h3>
-          <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
-            {ueberUnsContent.verantwortung.text}
-          </p>
+          {ueberUnsContent.verantwortung.paragraphs ? (
+            ueberUnsContent.verantwortung.paragraphs.map((p, index) => (
+              <p key={index} className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                {p}
+              </p>
+            ))
+          ) : (
+            <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+              {ueberUnsContent.verantwortung.text}
+            </p>
+          )}
         </div>
       </section>
 
@@ -199,7 +207,7 @@ export default function UeberUns({ onNavigate }: UeberUnsProps) {
                 <img
                   src="https://raw.githubusercontent.com/yathur-hub/eisbergdental-assets/refs/heads/main/Bu%CC%88ro%20Eisbergdental.avif"
                   alt="Eisberg Dental Atelier / Büro Innenhof"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-out"
+                  className="w-full h-full object-cover transition-all duration-500 ease-out"
                   referrerPolicy="no-referrer"
                 />
               </div>
