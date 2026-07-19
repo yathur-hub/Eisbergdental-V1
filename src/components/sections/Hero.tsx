@@ -50,47 +50,75 @@ export default function Hero({
       </div>
       
       <div className="container relative z-10">
-        <div className="max-w-4xl mx-auto text-center md:text-left">
-          {/* Tag / Badge */}
-          {badge && (
-            <div className="inline-block mb-6 animate-fade-in">
-              <span className="text-overline px-3 py-1 bg-[rgba(241,223,203,0.1)] border border-[rgba(241,223,203,0.15)] text-[var(--color-copper-500)] text-xs font-semibold tracking-wider">
-                {badge}
-              </span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: Headline, subheadline, actions */}
+          <div className="lg:col-span-7 text-center lg:text-left space-y-6">
+            {/* Tag / Badge */}
+            {badge && (
+              <div className="inline-block animate-fade-in">
+                <span className="text-overline px-3 py-1 bg-[rgba(241,223,203,0.1)] border border-[rgba(241,223,203,0.15)] text-[var(--color-copper-500)] text-xs font-semibold tracking-wider">
+                  {badge}
+                </span>
+              </div>
+            )}
+
+            {/* Heading */}
+            <h1 className="font-serif text-h1 hero-gradient-text font-semibold tracking-tight leading-tight max-w-3xl animate-slide-in">
+              {heading}
+            </h1>
+
+            {/* Subline / Description */}
+            <p className="text-lead text-[var(--color-text-secondary-ondark)] max-w-2xl leading-relaxed font-sans opacity-95 animate-fade-in [animation-delay:100ms]">
+              {subline}
+            </p>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in [animation-delay:200ms] pt-2">
+              <Button
+                id="hero-cta-primary"
+                variant="primary"
+                onClick={() => onNavigate(ctaPrimary.pageId, ctaPrimary.search)}
+                iconRight="arrow-right"
+                className="w-full sm:w-auto"
+              >
+                {ctaPrimary.text}
+              </Button>
+              
+              <Button
+                id="hero-cta-secondary"
+                variant="secondary"
+                onClick={() => onNavigate(ctaSecondary.pageId)}
+                className="w-full sm:w-auto border-[var(--color-brand-300)] text-[var(--color-text-primary-ondark)] hover:bg-[rgba(255,255,255,0.05)]"
+              >
+                {ctaSecondary.text}
+              </Button>
             </div>
-          )}
-
-          {/* Heading */}
-          <h1 className="font-serif text-h1 hero-gradient-text font-semibold tracking-tight leading-tight mb-6 max-w-3xl animate-slide-in">
-            {heading}
-          </h1>
-
-          {/* Subline / Description */}
-          <p className="text-lead text-[var(--color-text-secondary-ondark)] max-w-2xl mb-8 md:mb-10 leading-relaxed font-sans opacity-95 animate-fade-in [animation-delay:100ms]">
-            {subline}
-          </p>
-
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-in [animation-delay:200ms]">
-            <Button
-              id="hero-cta-primary"
-              variant="primary"
-              onClick={() => onNavigate(ctaPrimary.pageId, ctaPrimary.search)}
-              iconRight="arrow-right"
-              className="w-full sm:w-auto"
-            >
-              {ctaPrimary.text}
-            </Button>
-            
-            <Button
-              id="hero-cta-secondary"
-              variant="secondary"
-              onClick={() => onNavigate(ctaSecondary.pageId)}
-              className="w-full sm:w-auto border-[var(--color-brand-300)] text-[var(--color-text-primary-ondark)] hover:bg-[rgba(255,255,255,0.05)]"
-            >
-              {ctaSecondary.text}
-            </Button>
           </div>
+
+          {/* Right Column: Thomas Barandun image & description */}
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-start animate-fade-in [animation-delay:300ms]">
+            <div className="w-full max-w-[380px] lg:max-w-none bg-[var(--color-brand-900)]/40 border border-[var(--color-brand-700)] rounded-sm p-4 space-y-4">
+              <div className="aspect-[4/5] w-full overflow-hidden border border-[var(--color-brand-700)] bg-[var(--color-brand-950)] relative">
+                <img
+                  src="https://raw.githubusercontent.com/yathur-hub/eisbergdental-assets/refs/heads/main/thomas%20barandun.avif"
+                  alt="Thomas Barandun Portrait"
+                  className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-950)]/40 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="space-y-2">
+                <div className="font-mono text-[9px] text-[var(--color-copper-500)] uppercase tracking-widest font-semibold">
+                  Thomas Barandun — Inhaber
+                </div>
+                <p className="font-sans text-xs sm:text-sm text-[var(--color-text-secondary-ondark)] leading-relaxed">
+                  Thomas Barandun gehört zu den führenden Zahntechnikern Europas. Dort, wo Standardlösungen aufhören, beginnt seine Stärke: individuelle High-End-Arbeiten, die Funktion, Ästhetik und modernste Technologie vereinen.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
