@@ -1,0 +1,6 @@
+{
+  "name": "Eisberg Dental Website-Relaunch",
+  "description": "Moderner, hochpräziser Website-Relaunch für das zahntechnische Labor Eisberg Dental in Zürich, spezialisiert auf Implantatprothetik, Full Arch und Pink/White-Ästhetik.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
