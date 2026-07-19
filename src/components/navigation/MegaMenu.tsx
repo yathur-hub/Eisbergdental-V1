@@ -217,13 +217,13 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                 </span>
                 <nav className="flex flex-col gap-3 lg:gap-4 align-start">
                   {mainNavItems.map((item) => {
-                    const isActive = currentPageId === item.id;
+                    const isActive = currentPageId === item.id || (item.id === 'leistungen' && ['implantatprothetik', 'full-arch', 'pink-white-aesthetik', 'vollkeramik'].includes(currentPageId));
                     return (
                       <button
                         key={item.id}
                         onClick={() => handleItemClick(item.id)}
-                        className={`text-left font-serif text-h2 md:text-h2 lg:text-h1 font-medium tracking-tight hover:text-[var(--color-copper-500)] focus:text-[var(--color-copper-500)] focus-visible:outline-none transition-colors duration-200 cursor-pointer block group ${
-                          isActive ? 'text-[var(--color-copper-500)]' : 'text-[var(--color-text-primary-ondark)]'
+                        className={`text-left font-serif text-h2 md:text-h2 lg:text-h1 font-medium tracking-tight hover:text-[#CE8946] focus:text-[#CE8946] focus-visible:outline-none transition-colors duration-200 cursor-pointer block group ${
+                          isActive ? 'text-[#CE8946]' : 'text-[var(--color-text-primary-ondark)]'
                         }`}
                       >
                         <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">
@@ -243,7 +243,7 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                   </span>
                   <button
                     onClick={() => handleItemClick('leistungen')}
-                    className="text-[10px] uppercase font-bold tracking-wider text-[var(--color-copper-500)] hover:underline focus:underline cursor-pointer"
+                    className="text-[10px] uppercase font-bold tracking-wider text-[var(--color-copper-500)] hover:text-[#CE8946] hover:underline focus:underline cursor-pointer transition-colors duration-200"
                   >
                     Alle ansehen →
                   </button>
@@ -256,16 +256,18 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                       <button
                         key={item.id}
                         onClick={() => handleItemClick(item.id)}
-                        className={`text-left block space-y-1.5 p-3 -mx-3 hover:bg-[var(--color-brand-700)]/30 border-l-2 transition-all duration-200 cursor-pointer focus-visible:outline-none ${
+                        className={`text-left block space-y-1.5 p-3 -mx-3 hover:bg-[var(--color-brand-700)]/30 border-l-2 transition-all duration-200 cursor-pointer focus-visible:outline-none group ${
                           isActive 
-                            ? 'border-[var(--color-copper-600)] bg-[var(--color-brand-700)]/50' 
-                            : 'border-transparent hover:border-[var(--color-brand-500)]'
+                            ? 'border-[#CE8946] bg-[var(--color-brand-700)]/50' 
+                            : 'border-transparent hover:border-[#CE8946]'
                         }`}
                       >
-                        <h4 className="font-display text-sm font-semibold text-[var(--color-text-primary-ondark)] uppercase tracking-wide">
+                        <h4 className={`font-display text-sm font-semibold uppercase tracking-wide transition-colors duration-200 ${
+                          isActive ? 'text-[#CE8946]' : 'text-[var(--color-text-primary-ondark)]'
+                        } group-hover:text-[#CE8946]`}>
                           {item.label}
                         </h4>
-                        <p className="text-xs text-[var(--color-text-secondary-ondark)] leading-relaxed font-sans max-w-sm">
+                        <p className="text-xs text-[var(--color-text-secondary-ondark)] leading-relaxed font-sans max-w-sm transition-colors duration-200 group-hover:text-[var(--color-text-primary-ondark)]">
                           {item.description}
                         </p>
                       </button>
@@ -286,7 +288,7 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                     <span className="font-mono text-[9px] uppercase tracking-wider text-[var(--color-text-secondary-ondark)]/60 block">Telefon</span>
                     <a 
                       href="tel:+41434990256" 
-                      className="font-bold text-base text-[var(--color-text-primary-ondark)] hover:text-[var(--color-copper-500)] transition-colors hover:underline block"
+                      className="font-bold text-base text-[var(--color-text-primary-ondark)] hover:text-[#CE8946] transition-colors hover:underline block"
                     >
                       +41 43 499 02 56
                     </a>
@@ -297,7 +299,7 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                     <span className="font-mono text-[9px] uppercase tracking-wider text-[var(--color-text-secondary-ondark)]/60 block">E-Mail</span>
                     <a 
                       href="mailto:info@eisberg-dental.ch" 
-                      className="font-bold text-sm text-[var(--color-text-primary-ondark)] hover:text-[var(--color-copper-500)] transition-colors hover:underline block"
+                      className="font-bold text-sm text-[var(--color-text-primary-ondark)] hover:text-[#CE8946] transition-colors hover:underline block"
                     >
                       info@eisberg-dental.ch
                     </a>
@@ -354,25 +356,30 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                     <div className="px-4 pb-4 border-t border-[var(--color-brand-700)]/60 pt-3 space-y-4 animate-fade-in">
                       <button
                         onClick={() => handleItemClick('leistungen')}
-                        className="text-left font-display text-xs font-bold uppercase text-[var(--color-copper-500)] hover:underline block"
+                        className="text-left font-display text-xs font-bold uppercase text-[var(--color-copper-500)] hover:text-[#CE8946] hover:underline block transition-colors duration-200"
                       >
                         Alle Leistungen im Überblick →
                       </button>
                       <div className="space-y-4 pt-1">
-                        {leistungenList.map((item) => (
-                          <button
-                            key={item.id}
-                            onClick={() => handleItemClick(item.id)}
-                            className="w-full text-left block space-y-1 border-l border-[var(--color-brand-500)] pl-3"
-                          >
-                            <h5 className="font-display text-xs font-bold uppercase text-[var(--color-text-primary-ondark)]">
-                              {item.label}
-                            </h5>
-                            <p className="text-[11px] text-[var(--color-text-secondary-ondark)]/80 leading-relaxed font-sans">
-                              {item.description}
-                            </p>
-                          </button>
-                        ))}
+                        {leistungenList.map((item) => {
+                          const isActive = currentPageId === item.id;
+                          return (
+                            <button
+                              key={item.id}
+                              onClick={() => handleItemClick(item.id)}
+                              className="w-full text-left block space-y-1 border-l border-[var(--color-brand-500)] pl-3 group"
+                            >
+                              <h5 className={`font-display text-xs font-bold uppercase transition-colors duration-200 ${
+                                isActive ? 'text-[#CE8946]' : 'text-[var(--color-text-primary-ondark)]'
+                              } group-hover:text-[#CE8946]`}>
+                                {item.label}
+                              </h5>
+                              <p className="text-[11px] text-[var(--color-text-secondary-ondark)]/80 leading-relaxed font-sans">
+                                {item.description}
+                              </p>
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -380,19 +387,22 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
 
                 {/* Main Links List */}
                 <div className="flex flex-col gap-1.5">
-                  {mainNavItems.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => handleItemClick(item.id)}
-                      className={`w-full min-h-[44px] flex items-center text-left px-4 py-2 font-display text-sm font-medium tracking-wide border border-transparent rounded-[var(--radius-xs)] hover:bg-[var(--color-brand-700)]/30 ${
-                        currentPageId === item.id 
-                          ? 'bg-[var(--color-brand-700)] text-[var(--color-copper-500)] border-l-2 border-l-[var(--color-copper-600)]' 
-                          : 'text-[var(--color-text-primary-ondark)]'
-                      }`}
-                    >
-                      {item.label}
-                    </button>
-                  ))}
+                  {mainNavItems.map((item) => {
+                    const isActive = currentPageId === item.id || (item.id === 'leistungen' && ['implantatprothetik', 'full-arch', 'pink-white-aesthetik', 'vollkeramik'].includes(currentPageId));
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => handleItemClick(item.id)}
+                        className={`w-full min-h-[44px] flex items-center text-left px-4 py-2 font-display text-sm font-medium tracking-wide border border-transparent rounded-[var(--radius-xs)] hover:bg-[var(--color-brand-700)]/30 hover:text-[#CE8946] transition-colors duration-200 ${
+                          isActive 
+                            ? 'bg-[var(--color-brand-700)] text-[#CE8946] border-l-2 border-l-[#CE8946]' 
+                            : 'text-[var(--color-text-primary-ondark)]'
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    );
+                  })}
                 </div>
 
                 {/* Contact Box Mobile */}
@@ -404,7 +414,7 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                   <div className="space-y-3.5 text-xs">
                     <a 
                       href="tel:+41434990256" 
-                      className="flex items-center gap-2.5 font-bold text-[var(--color-text-primary-ondark)] hover:text-[var(--color-copper-500)]"
+                      className="flex items-center gap-2.5 font-bold text-[var(--color-text-primary-ondark)] hover:text-[#CE8946]"
                     >
                       <Icon name="phone" size={14} className="text-[var(--color-copper-500)]" />
                       <span>+41 43 499 02 56</span>
@@ -432,15 +442,20 @@ export default function MegaMenu({ currentPageId, onNavigate }: MegaMenuProps) {
                 &copy; {new Date().getFullYear()} Eisberg Dental. Alle Rechte vorbehalten.
               </span>
               <div className="flex flex-wrap gap-4 justify-center">
-                {secondaryNavItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleItemClick(item.id)}
-                    className="hover:text-[var(--color-copper-500)] focus:text-[var(--color-copper-500)] cursor-pointer text-[11px]"
-                  >
-                    {item.label}
-                  </button>
-                ))}
+                {secondaryNavItems.map((item) => {
+                  const isActive = currentPageId === item.id;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => handleItemClick(item.id)}
+                      className={`hover:text-[#CE8946] focus:text-[#CE8946] cursor-pointer text-[11px] transition-colors duration-200 ${
+                        isActive ? 'text-[#CE8946] font-semibold' : 'hover:text-[#CE8946]'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 

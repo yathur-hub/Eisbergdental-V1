@@ -6,11 +6,11 @@
  */
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
   /* FARBEN — Primitive */
-  --color-brand-900: #0F1520;
-  --color-brand-700: #172030;
+  --color-brand-900: #091624;
+  --color-brand-700: #0e2031;
   --color-brand-500: #CE8946;
   --color-brand-300: #CE8946;
   --color-brand-100: #F5F5F7;
@@ -24,7 +24,7 @@
   --color-copper-500: #CE8946;
   --color-copper-100: #F5F5F7;
 
-  --color-neutral-900: #0F1520;
+  --color-neutral-900: #091624;
   --color-neutral-700: #2C3545;
   --color-neutral-500: #6B7588;
   --color-neutral-300: #C0C5D0;
@@ -54,24 +54,24 @@
   --color-signal-600: #CE8946;
   --color-signal-300: #CE8946;
 
-  /* FARBEN — Semantisch (Light Theme, Default) */
-  --color-bg-canvas: #F5F5F7;
-  --color-bg-surface: #FFFFFF;
-  --color-bg-canvas-dark: #0F1520;
-  --color-bg-surface-dark: #172030;
-  --color-bg-inverse: #0F1520;
+  /* FARBEN — Semantisch (Dark Theme, Default) */
+  --color-bg-canvas: #091624;
+  --color-bg-surface: #0e2031;
+  --color-bg-canvas-dark: #091624;
+  --color-bg-surface-dark: #0e2031;
+  --color-bg-inverse: #F5F5F7;
 
-  --color-text-primary: #0F1520;
-  --color-text-secondary: #2C3545;
-  --color-text-tertiary: #6B7588;
+  --color-text-primary: #F5F5F7;
+  --color-text-secondary: #C0C5D0;
+  --color-text-tertiary: #96A9BA;
   --color-text-primary-ondark: #F5F5F7;
   --color-text-secondary-ondark: rgba(245, 245, 247, 0.7);
   --color-text-accent: #CE8946;
   --color-text-disabled: #6B7588;
-  --color-text-on-brand: #0F1520;
+  --color-text-on-brand: #091624;
 
-  --color-border-default: #C0C5D0;
-  --color-border-subtle: #E2E4E9;
+  --color-border-default: #162a3e;
+  --color-border-subtle: #0d1e2e;
   --color-border-dark: #CE8946;
 
   --color-interactive-primary: #CE8946;
@@ -80,16 +80,16 @@
   --color-interactive-accent-hover: #AF743B;
   --color-focus-ring: #CE8946;
 
-  --color-overlay-dark-40: rgba(15, 21, 32, 0.4);
-  --color-overlay-dark-70: rgba(15, 21, 32, 0.7);
+  --color-overlay-dark-40: rgba(9, 22, 36, 0.4);
+  --color-overlay-dark-70: rgba(9, 22, 36, 0.7);
   --color-overlay-light-60: rgba(245, 245, 247, 0.6);
 
-  --gradient-depth: linear-gradient(180deg, #0F1520 0%, #0F1520 100%);
-  --gradient-copper-tint: linear-gradient(135deg, #0F1520 0%, #0F1520 100%);
+  --gradient-depth: linear-gradient(180deg, #091624 0%, #091624 100%);
+  --gradient-copper-tint: linear-gradient(135deg, #091624 0%, #091624 100%);
 
   /* NEU: erweiterte, reichhaltigere Verläufe (ersetzen/ergänzen --gradient-depth) */
-  --gradient-aurora: linear-gradient(135deg, #0F1520 0%, #0F1520 100%);
-  --gradient-aurora-violet: linear-gradient(160deg, #0F1520 0%, #0F1520 100%);
+  --gradient-aurora: linear-gradient(135deg, #091624 0%, #091624 100%);
+  --gradient-aurora-violet: linear-gradient(160deg, #091624 0%, #091624 100%);
   --gradient-tech-glow: radial-gradient(circle, rgba(206,137,70,0.1) 0%, rgba(206,137,70,0) 70%);
   --gradient-signal-glow: radial-gradient(circle, rgba(206,137,70,0.1) 0%, rgba(206,137,70,0) 70%);
 
@@ -216,8 +216,8 @@
   --color-text-tertiary: var(--color-slate-400);
   --color-text-accent: var(--color-copper-500);
   --color-text-disabled: var(--color-brand-300);
-  --color-border-default: var(--color-brand-300);
-  --color-border-subtle: var(--color-brand-700);
+  --color-border-default: #162a3e;
+  --color-border-subtle: #0d1e2e;
   --color-interactive-primary: var(--color-slate-200);
   --color-interactive-primary-hover: var(--color-bone-50);
   --color-interactive-accent: var(--color-copper-500);
@@ -234,8 +234,8 @@
     --color-text-primary: var(--color-bone-50);
     --color-text-secondary: var(--color-slate-200);
     --color-text-tertiary: var(--color-slate-400);
-    --color-border-default: var(--color-brand-300);
-    --color-border-subtle: var(--color-brand-700);
+    --color-border-default: #162a3e;
+    --color-border-subtle: #0d1e2e;
   }
 }
 
