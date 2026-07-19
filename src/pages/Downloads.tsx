@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PageId, ValItem } from '../types';
 import { downloadsContent } from '../content/pages/downloads';
+import { updateDocumentMetadata } from '../lib/metadata';
 import WaterlineDivider from '../components/ui/WaterlineDivider';
 import Button from '../components/ui/Button';
 import { FileText, Download, Info } from 'lucide-react';
@@ -20,6 +21,10 @@ interface DownloadsProps {
  * - Übergreifender Workflow führt direkt zum Kontaktformular (?anlass=unterlagen).
  */
 export default function Downloads({ onNavigate }: DownloadsProps) {
+  useEffect(() => {
+    updateDocumentMetadata(downloadsContent.seo.title, downloadsContent.seo.description);
+  }, []);
+
   return (
     <div className="bg-[var(--color-bg-canvas)] text-[var(--color-text-primary)] min-h-screen">
       

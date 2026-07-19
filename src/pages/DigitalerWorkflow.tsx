@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageId, ValItem } from '../types';
 import { workflowContent } from '../content/pages/workflow';
+import { updateDocumentMetadata } from '../lib/metadata';
 import ProcessSteps8 from '../components/sections/ProcessSteps8';
 import WaterlineDivider from '../components/ui/WaterlineDivider';
 import Button from '../components/ui/Button';
@@ -21,6 +22,10 @@ interface DigitalerWorkflowProps {
  */
 export default function DigitalerWorkflow({ onNavigate }: DigitalerWorkflowProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    updateDocumentMetadata(workflowContent.seo.title, workflowContent.seo.description);
+  }, []);
 
   return (
     <div className="bg-[var(--color-bg-canvas)] text-[var(--color-text-primary)] min-h-screen">

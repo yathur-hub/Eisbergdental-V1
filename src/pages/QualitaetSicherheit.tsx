@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageId, ValItem } from '../types';
 import { qualitaetContent } from '../content/pages/qualitaet-sicherheit';
+import { updateDocumentMetadata } from '../lib/metadata';
 import TrustSection, { TrustSectionItem } from '../components/content/TrustSection';
 import WaterlineDivider from '../components/ui/WaterlineDivider';
 import Button from '../components/ui/Button';
@@ -21,6 +22,10 @@ interface QualitaetSicherheitProps {
  */
 export default function QualitaetSicherheit({ onNavigate }: QualitaetSicherheitProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    updateDocumentMetadata(qualitaetContent.seo.title, qualitaetContent.seo.description);
+  }, []);
 
   // Map the draft trust items with their verified flags set to FALSE per instructions
   const trustItems: TrustSectionItem[] = [

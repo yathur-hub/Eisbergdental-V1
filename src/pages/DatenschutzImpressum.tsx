@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageId, ValItem } from '../types';
 import { datenschutzContent } from '../content/pages/datenschutz';
 import { impressumContent } from '../content/pages/impressum';
+import { updateDocumentMetadata } from '../lib/metadata';
 import WaterlineDivider from '../components/ui/WaterlineDivider';
 import { Shield, FileText, Scale } from 'lucide-react';
 
@@ -20,6 +21,14 @@ interface DatenschutzImpressumProps {
  */
 export default function DatenschutzImpressum({ initialTab = 'datenschutz' }: DatenschutzImpressumProps) {
   const [activeTab, setActiveTab] = useState<'datenschutz' | 'impressum'>(initialTab);
+
+  useEffect(() => {
+    if (activeTab === 'datenschutz') {
+      updateDocumentMetadata(datenschutzContent.seo.title, datenschutzContent.seo.description);
+    } else {
+      updateDocumentMetadata(impressumContent.seo.title, impressumContent.seo.description);
+    }
+  }, [activeTab]);
 
   return (
     <div className="bg-[var(--color-bg-canvas)] min-h-screen py-16 md:py-24">

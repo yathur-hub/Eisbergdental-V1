@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PageId, ValItem } from '../types';
 import { ueberUnsContent } from '../content/pages/ueber-uns';
+import { updateDocumentMetadata } from '../lib/metadata';
 import Timeline from '../components/content/Timeline';
 import WaterlineDivider from '../components/ui/WaterlineDivider';
 import Button from '../components/ui/Button';
@@ -20,6 +21,10 @@ interface UeberUnsProps {
  * - Strikte, belegbare Kommunikation – Verzicht auf den unbestätigten "Europaweit führend" Claim.
  */
 export default function UeberUns({ onNavigate }: UeberUnsProps) {
+  useEffect(() => {
+    updateDocumentMetadata(ueberUnsContent.seo.title, ueberUnsContent.seo.description);
+  }, []);
+
   return (
     <div className="bg-[var(--color-bg-canvas)] text-[var(--color-text-primary)] min-h-screen">
       

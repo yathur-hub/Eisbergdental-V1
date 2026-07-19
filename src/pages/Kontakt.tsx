@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PageId, ValItem } from '../types';
+import { kontaktContent } from '../content/pages/kontakt';
+import { updateDocumentMetadata } from '../lib/metadata';
 import ContactForm from '../components/forms/ContactForm';
 import WaterlineDivider from '../components/ui/WaterlineDivider';
 import { Phone, Mail, MapPin } from 'lucide-react';
@@ -18,6 +20,10 @@ interface KontaktProps {
  * - Betont Transparenz und Verzicht auf ungesicherte Reaktionszeit-Zusagen.
  */
 export default function Kontakt({ onNavigate }: KontaktProps) {
+  useEffect(() => {
+    updateDocumentMetadata(kontaktContent.seo.title, kontaktContent.seo.description);
+  }, []);
+
   return (
     <div className="bg-[var(--color-bg-canvas)] text-[var(--color-text-primary)] min-h-screen">
       

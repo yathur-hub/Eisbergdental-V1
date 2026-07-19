@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageId, ValItem } from '../types';
 import { wissenFaqContent } from '../content/pages/wissen-faq';
+import { updateDocumentMetadata } from '../lib/metadata';
 import WaterlineDivider from '../components/ui/WaterlineDivider';
 import Button from '../components/ui/Button';
 import { Search, MessageSquare } from 'lucide-react';
@@ -22,6 +23,10 @@ export default function WissenFaq({ onNavigate }: WissenFaqProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
+
+  useEffect(() => {
+    updateDocumentMetadata(wissenFaqContent.seo.title, wissenFaqContent.seo.description);
+  }, []);
 
   const categories = [
     { id: 'all', label: 'Alle Themen' },

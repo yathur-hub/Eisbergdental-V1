@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PageId, ValItem } from '../types';
 import { referenzenContent } from '../content/pages/referenzen';
+import { updateDocumentMetadata } from '../lib/metadata';
 import CaseStudy from '../components/content/CaseStudy';
 import WaterlineDivider from '../components/ui/WaterlineDivider';
 import Button from '../components/ui/Button';
@@ -20,6 +21,10 @@ interface ReferenzenProps {
  * - Beachtet die Wahrheitspflicht – Ausblendung unbestätigter Zahnarzt-Zitate (VAL-095).
  */
 export default function Referenzen({ onNavigate }: ReferenzenProps) {
+  useEffect(() => {
+    updateDocumentMetadata(referenzenContent.seo.title, referenzenContent.seo.description);
+  }, []);
+
   return (
     <div className="bg-[var(--color-bg-canvas)] text-[var(--color-text-primary)] min-h-screen">
       
